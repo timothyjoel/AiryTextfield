@@ -1,8 +1,6 @@
 import SwiftUI
-
-public struct AiryTextfieldSwiftUI {
     
-    public struct AiryTextfield: View {
+public struct AiryTextfield: View {
         
         // MARK: - Standard AiryTextfield variables
         private var placeholder: String
@@ -46,59 +44,63 @@ public struct AiryTextfieldSwiftUI {
             }
         }
         
-        // MARK: - Standard methods
-        /// Color of text input
-        @inlinable public func mainColor(_ color: Color) -> some View {
-            let textfield = self
-            textfield.mainColor = color
-            return textfield
-        }
-        
-        /// Default color of title and line when not selected
-        @inlinable func secondaryColor(_ color: Color) -> some View {
-            let textfield = self
-            textfield.secondaryColor = color
-            return textfield
-        }
-        
-        /// Font of title above textfield
-        @inlinable func titleFont(_ font: Font) -> some View {
-            let textfield = self
-            textfield.titleFont = font
-            return textfield
-        }
-        
-        /// Height of line under textfield
-        @inlinable func lineHeight(_ height: CGFloat) -> some View {
-            let textfield = self
-            textfield.lineHeight = height
-            return textfield
-        }
-        
-        /// Defines whether title above textfield is uppercased
-        @inlinable func titleUppercased(_ bool: Bool) -> some View {
-            let textfield = self
-            textfield.titleUppercased = bool
-            return textfield
-        }
-        
-        /// Defines alignment of title
-        @inlinable func titleAlignment(_ alignment: TextAlignment) -> some View {
-            let textfield = self
-            textfield.titleAlignment = alignment
-            return textfield
-        }
-        
-        /// Defines alignment of text input
-        @inlinable func textAlignment(_ alignment: TextAlignment) -> some View {
-            let textfield = self
-            textfield.textAlignment = alignment
-            return textfield
-        }
-        
+}
+
+extension AiryTextfield {
+    
+
+    // MARK: - Standard methods
+    /// Color of text input
+    @inlinable public func mainColor(_ color: Color) -> some View {
+        let textfield = self
+        textfield.mainColor = color
+        return textfield
+    }
+    
+    /// Default color of title and line when not selected
+    @inlinable func secondaryColor(_ color: Color) -> some View {
+        let textfield = self
+        textfield.secondaryColor = color
+        return textfield
+    }
+    
+    /// Font of title above textfield
+    @inlinable func titleFont(_ font: Font) -> some View {
+        let textfield = self
+        textfield.titleFont = font
+        return textfield
+    }
+    
+    /// Height of line under textfield
+    @inlinable func lineHeight(_ height: CGFloat) -> some View {
+        let textfield = self
+        textfield.lineHeight = height
+        return textfield
+    }
+    
+    /// Defines whether title above textfield is uppercased
+    @inlinable func titleUppercased(_ bool: Bool) -> some View {
+        let textfield = self
+        textfield.titleUppercased = bool
+        return textfield
+    }
+    
+    /// Defines alignment of title
+    @inlinable func titleAlignment(_ alignment: TextAlignment) -> some View {
+        let textfield = self
+        textfield.titleAlignment = alignment
+        return textfield
+    }
+    
+    /// Defines alignment of text input
+    @inlinable func textAlignment(_ alignment: TextAlignment) -> some View {
+        let textfield = self
+        textfield.textAlignment = alignment
+        return textfield
     }
     
 }
+    
 
 protocol AiryValidator {
     
