@@ -1,4 +1,5 @@
 import SwiftUI
+import Combine
     
 public struct AiryTextfield: View {
         
@@ -16,7 +17,7 @@ public struct AiryTextfield: View {
         @State public var textAlignment: TextAlignment = .leading
         @State public var titleAlignment: TextAlignment = .leading
         
-        init(title: String, placeholder: String, text: Binding<String>) {
+        public init(title: String, placeholder: String, text: Binding<String>) {
             self.title = title
             self.placeholder = placeholder
             self._text = text
@@ -58,57 +59,45 @@ extension AiryTextfield {
     }
     
     /// Default color of title and line when not selected
-    @inlinable func secondaryColor(_ color: Color) -> some View {
+    @inlinable public func secondaryColor(_ color: Color) -> some View {
         let textfield = self
         textfield.secondaryColor = color
         return textfield
     }
     
     /// Font of title above textfield
-    @inlinable func titleFont(_ font: Font) -> some View {
+    @inlinable public func titleFont(_ font: Font) -> some View {
         let textfield = self
         textfield.titleFont = font
         return textfield
     }
     
     /// Height of line under textfield
-    @inlinable func lineHeight(_ height: CGFloat) -> some View {
+    @inlinable public func lineHeight(_ height: CGFloat) -> some View {
         let textfield = self
         textfield.lineHeight = height
         return textfield
     }
     
     /// Defines whether title above textfield is uppercased
-    @inlinable func titleUppercased(_ bool: Bool) -> some View {
+    @inlinable public func titleUppercased(_ bool: Bool) -> some View {
         let textfield = self
         textfield.titleUppercased = bool
         return textfield
     }
     
     /// Defines alignment of title
-    @inlinable func titleAlignment(_ alignment: TextAlignment) -> some View {
+    @inlinable public func titleAlignment(_ alignment: TextAlignment) -> some View {
         let textfield = self
         textfield.titleAlignment = alignment
         return textfield
     }
     
     /// Defines alignment of text input
-    @inlinable func textAlignment(_ alignment: TextAlignment) -> some View {
+    @inlinable public func textAlignment(_ alignment: TextAlignment) -> some View {
         let textfield = self
         textfield.textAlignment = alignment
         return textfield
     }
-    
-}
-    
-
-protocol AiryValidator {
-    
-    typealias validationMessage = String
-    typealias isValid = Bool
-    typealias AiryValidationStatus = (validationMessage, isValid)
-    
-    /// Returns ValidationStatus in format (validationMessage, isValid)
-    func getValidation(of text: String, textfieldDefaultTitle: String) -> AiryValidationStatus
     
 }
