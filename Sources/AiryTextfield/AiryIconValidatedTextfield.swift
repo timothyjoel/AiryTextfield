@@ -32,7 +32,7 @@ struct AiryIconValidatedTextfield: View {
     @State private var iconPosition: IconPosition = .leading
     
     // MARK: - Initializer
-    init(title: String = "", placeholder: String = "", text: Binding<String>, isValid: Binding<Bool>, validator: AiryValidator, icon: String, errorIcon: String? = nil) {
+    public init(title: String = "", placeholder: String = "", text: Binding<String>, isValid: Binding<Bool>, validator: AiryValidator, icon: String, errorIcon: String? = nil) {
         self.title = title
         self.placeholder = placeholder
         self._text = text

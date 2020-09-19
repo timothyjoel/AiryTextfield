@@ -23,7 +23,7 @@ public struct AiryIconTextfield: View {
     @State public var iconRenderingMode: Image.TemplateRenderingMode? = .template
     @State public var iconPosition: AiryIconPosition = .leading
     
-    init(title: String = "", placeholder: String = "", text: Binding<String>, icon: String) {
+    public init(title: String = "", placeholder: String = "", text: Binding<String>, icon: String) {
         self.title = title
         self.placeholder = placeholder
         self._text = text
