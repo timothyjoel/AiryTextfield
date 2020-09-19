@@ -1,7 +1,7 @@
 
 import Foundation
 
-protocol AiryValidator {
+public protocol AiryValidator {
     
     typealias validationMessage = String
     typealias isValid = Bool
